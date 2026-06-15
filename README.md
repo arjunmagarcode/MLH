@@ -18,12 +18,31 @@ cut scope to the thing that actually demos — at the one moment cutting is chea
 ## What's here
 
 ```
+scoper.py                          runnable CLI — calls a free LLM API
 skills/hackathon-scoper/SKILL.md   the skill itself (drop into ~/.claude/skills/)
 examples/example-output.md         a full run on a sample team (SnapSolve)
+examples/sample-brief.txt          a sample input you can run against
 TRANSCRIPT.md                       transcript of building + running the skill
 ```
 
-## Try it
+## Run the code (free, zero dependencies)
+
+`scoper.py` is pure Python standard library — no `pip install`. It uses
+[Groq's free API](https://console.groq.com) by default, and reads its system
+prompt straight from `SKILL.md`, so the code and the skill never drift apart.
+
+```bash
+export GROQ_API_KEY=gsk_...                  # free key from console.groq.com
+python3 scoper.py --file examples/sample-brief.txt   # run on the sample team
+python3 scoper.py                            # or answer the prompts interactively
+echo "Idea: ...  Tech stack: ...  Team: ..." | python3 scoper.py   # or pipe a brief
+```
+
+It's endpoint-agnostic — point it at any OpenAI-compatible API by setting
+`SCOPER_BASE` and `SCOPER_MODEL` (e.g. a local Ollama server, Gemini's
+OpenAI-compatible endpoint, etc.).
+
+## Or run it as a Claude Code skill
 
 Copy the skill into your Claude Code skills directory:
 
@@ -31,17 +50,8 @@ Copy the skill into your Claude Code skills directory:
 cp -r skills/hackathon-scoper ~/.claude/skills/
 ```
 
-Then in Claude Code:
-
-```
-/hackathon-scoper
-
-Idea: <2-3 sentences>
-Tech stack: <languages, frameworks, APIs>
-Team: <e.g. 3 people — 2 fullstack devs, 1 designer>
-```
-
-It will ask for any of the three inputs you leave out, then produce the plan.
+Then in Claude Code: `/hackathon-scoper`, paste your idea / stack / team, and it
+produces the plan. It asks for any of the three inputs you leave out.
 
 ## Why I built it
 

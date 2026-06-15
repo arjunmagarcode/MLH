@@ -1,0 +1,6 @@
+Idea: A web app where you photograph a handwritten math problem and get a
+step-by-step solution plus a short voice explanation. Targeting the education track.
+Tech stack: Next.js, Tailwind, Python/FastAPI, Claude API (vision + text), ElevenLabs TTS, Supabase.
+Team: 3 people — 2 fullstack devs, 1 designer.
+
+Scope this for a 24-hour hackathon. Be brutally practical.
