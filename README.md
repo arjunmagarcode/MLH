@@ -39,6 +39,82 @@ It's endpoint-agnostic — point it at any OpenAI-compatible API by setting
 `SCOPER_BASE` and `SCOPER_MODEL` (e.g. a local Ollama server, Gemini's
 OpenAI-compatible endpoint, etc.).
 
+## Demo
+
+A live run (model: `llama-3.3-70b-versatile`) scoping a handwritten-math-solver idea.
+
+**Input:**
+
+```
+Idea: A web app where you photograph a handwritten math problem and get a
+step-by-step solution with a short voice explanation. Targets the education track.
+Tech stack: Next.js, Tailwind, Python/FastAPI, Groq API, ElevenLabs TTS, Supabase
+Team: 3 people — 2 fullstack devs, 1 designer
+```
+
+**Output:**
+
+```
+PROJECT NAME & ONE-LINER
+MathSolve: A web app that uses AI to solve handwritten math problems and
+provides step-by-step audio explanations.
+
+REALITY CHECK
+Given the complexity of the project, which involves image processing, math
+problem solving, and text-to-speech integration, it's highly unlikely that we
+can deliver a fully polished product within 24 hours. However, we can aim to
+build a functional prototype that demonstrates the core functionality. The
+biggest challenge will be integrating the various APIs and handling the image
+processing and math problem solving.
+
+MVP CHECKLIST
+* MUST (4h): Set up Next.js project with basic UI using Tailwind (1h), integrate
+  Supabase for storing user data (1h), create a simple API using FastAPI for
+  handling image uploads (1h), and basic math problem solving (1h)
+* MUST (4h): Integrate Groq API for math problem solving (2h) and ElevenLabs TTS
+  for audio explanations (2h)
+* SHOULD (4h): Implement image processing using a library like OpenCV (2h) and
+  integrate it with the FastAPI backend (2h)
+* NICE (4h): Implement a more advanced UI with features like problem editing and
+  history (2h), and add more advanced math problem solving capabilities (2h)
+
+24-HOUR TIMELINE
+* 0-2h: Project setup, team discussion, and task assignment
+* 2-6h: Set up Next.js project, integrate Supabase, and create basic API using
+  FastAPI (Owner: Fullstack Dev 1)
+* 6-10h: Integrate Groq API and ElevenLabs TTS (Owner: Fullstack Dev 2)
+* 10-14h: Implement image processing and integrate it with the FastAPI backend
+  (Owner: Fullstack Dev 1)
+* 14-18h: Feature freeze, focus on integration and debugging
+* 18-20h: Demo preparation, UI polishing, and audio testing (Owner: Designer)
+* 20-24h: Final debugging, demo rehearsal, and submission preparation
+
+APIS WORTH INTEGRATING
+* Groq API (medium): Provides advanced math problem solving capabilities
+* ElevenLabs TTS (low): Offers high-quality text-to-speech functionality
+* Supabase (low): Provides a simple and easy-to-use database solution
+* OpenCV (medium): Offers advanced image processing capabilities
+* Google Cloud Vision API (high): Provides advanced image recognition and
+  processing capabilities (optional)
+
+STRETCH GOALS
+* Implement a feature to edit and save math problems
+* Add support for more advanced math topics like calculus and algebra
+* Integrate a feature to share and discuss math problems with others
+
+BIGGEST RISK
+The biggest risk is the integration of the various APIs, especially the Groq API
+and ElevenLabs TTS, which may require significant debugging and tweaking to work
+seamlessly. Mitigation: Allocate sufficient time for integration and debugging,
+and have a backup plan in case one of the APIs doesn't work as expected.
+
+DEMO TIP
+Focus on demonstrating the core functionality of the app, which is solving
+handwritten math problems and providing step-by-step audio explanations. Make
+sure to test the demo thoroughly to ensure that it works smoothly and without
+any technical issues.
+```
+
 ## Or run it as a Claude Code skill
 
 Copy the skill into your Claude Code skills directory:
