@@ -19,10 +19,7 @@ cut scope to the thing that actually demos — at the one moment cutting is chea
 
 ```
 scoper.py                          runnable CLI — calls a free LLM API
-skills/hackathon-scoper/SKILL.md   the skill itself (drop into ~/.claude/skills/)
-examples/example-output.md         a full run on a sample team (SnapSolve)
-examples/sample-brief.txt          a sample input you can run against
-TRANSCRIPT.md                       transcript of building + running the skill
+skills/hackathon-scoper/SKILL.md   the skill / system prompt the CLI runs on
 ```
 
 ## Run the code (free, zero dependencies)
@@ -32,10 +29,10 @@ TRANSCRIPT.md                       transcript of building + running the skill
 prompt straight from `SKILL.md`, so the code and the skill never drift apart.
 
 ```bash
-export GROQ_API_KEY=gsk_...                  # free key from console.groq.com
-python3 scoper.py --file examples/sample-brief.txt   # run on the sample team
-python3 scoper.py                            # or answer the prompts interactively
-echo "Idea: ...  Tech stack: ...  Team: ..." | python3 scoper.py   # or pipe a brief
+export GROQ_API_KEY=gsk_...        # free key from console.groq.com
+python3 scoper.py                  # answer the three prompts interactively
+python3 scoper.py --file brief.txt # or read the brief from a file
+echo "Idea: ...  Tech stack: ...  Team: ..." | python3 scoper.py   # or pipe it in
 ```
 
 It's endpoint-agnostic — point it at any OpenAI-compatible API by setting
