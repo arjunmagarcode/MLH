@@ -72,6 +72,7 @@ def call_llm(system: str, user: str) -> str:
         headers={
             "Authorization": f"Bearer {API_KEY}",
             "Content-Type": "application/json",
+            "User-Agent": "hackathon-scoper/1.0",
         },
         method="POST",
     )
